@@ -12,7 +12,8 @@ password=YOURPASSWORD
 EOF
 }
 hostname=YOURFILEBROWSERHOSTNAME
-#curl -s -X POST -H 'Accept: */*' -H 'Content-Type: application/json' --data "$(generate_post_data)" https://$hostname/api/login
+
+
 payload=$(generate_post_data)
 echo $payload
 TOKEN=$(curl -s -X POST -H 'Accept: */*' -H 'Content-Type: application/json' --data "$payload"  https://${hostname}/api/login)
